@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CubicLauncher Theme",
+  "type": "object",
+  "required": ["name", "variables"],
+  "properties": {
+    "name": { "type": "string", "description": "Nombre visible del theme" },
+    "author": { "type": "string", "description": "Creador del theme" },
+    "type": { "type": "string", "enum": ["builtin", "user"], "description": "Tipo de theme" },
+    "bg_image": { "type": "string", "description": "Nombre del archivo (bg.jpg o bg.png)" },
+    "bg_image_blur": { "type": "string", "description": "Blur en px, ej: 4px" },
+    "bg_image_opacity": { "type": "number", "minimum": 0, "maximum": 1, "description": "Opacidad 0-1" },
+    "font": { "type": "string", "description": "Nombre del archivo font.woff2" },
+    "variables": {
+      "type": "object",
+      "description": "Variables CSS a sobrescribir",
+      "minProperties": 1,
+      "properties": {
+        "--bg-main":           { "type": "string", "description": "Fondo principal del launcher" },
+        "--bg-sidebar":        { "type": "string", "description": "Fondo barra lateral" },
+        "--bg-card":           { "type": "string", "description": "Fondo de tarjetas/paneles" },
+        "--bg-item-active":    { "type": "string", "description": "Fondo hover/active en listas" },
+        "--bg-overlay":        { "type": "string", "description": "Fondo de modales/drawers (rgba)" },
+        "--bg-input":          { "type": "string", "description": "Fondo de inputs" },
+        "--text-primary":      { "type": "string", "description": "Color texto principal" },
+        "--text-secondary":    { "type": "string", "description": "Color texto secundario" },
+        "--text-muted":        { "type": "string", "description": "Color texto deshabilitado/hints" },
+        "--border-color":      { "type": "string", "description": "Color de bordes" },
+        "--border-radius":     { "type": "string", "description": "Radio de borde general, ej: 8px" },
+        "--border-radius-sm":  { "type": "string", "description": "Radio de borde pequeño, ej: 4px" },
+        "--accent":            { "type": "string", "description": "Color de acento principal" },
+        "--accent-rgb":        { "type": "string", "description": "RGB del acento sin paréntesis, ej: 255,255,255" },
+        "--accent-hover":      { "type": "string", "description": "Color hover del acento" },
+        "--accent-text":       { "type": "string", "description": "Color texto sobre fondo accent" },
+        "--shadow-sm":         { "type": "string", "description": "Sombra pequeña (box-shadow)" },
+        "--shadow-md":         { "type": "string", "description": "Sombra mediana (box-shadow)" },
+        "--glow-accent":       { "type": "string", "description": "Brillo del acento (box-shadow)" },
+        "--color-success":     { "type": "string", "description": "Color de éxito/verde" },
+        "--color-error":       { "type": "string", "description": "Color de error/rojo" },
+        "--color-warning":     { "type": "string", "description": "Color de advertencia/amarillo" },
+        "--scrollbar-track":   { "type": "string", "description": "Fondo del track del scrollbar" },
+        "--scrollbar-thumb":   { "type": "string", "description": "Color del thumb del scrollbar" },
+        "--font-family":       { "type": "string", "description": "Fuente principal" },
+        "--font-size-base":    { "type": "string", "description": "Tamaño base, ej: 14px" },
+        "--font-size-sm":      { "type": "string", "description": "Tamaño pequeño, ej: 12px" },
+        "--font-size-lg":      { "type": "string", "description": "Tamaño grande, ej: 16px" }
+      },
+      "additionalProperties": {
+        "type": "string",
+        "description": "Cualquier variable CSS adicional"
+      }
+    }
+  }
+}
