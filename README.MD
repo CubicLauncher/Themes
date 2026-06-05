@@ -21,7 +21,6 @@ src/
     ThemeName/
       ThemeName:Author.zip
       Showcase.png
-      bg.jpg
 ```
 
 Cada tema se organiza bajo `src/` con el formato `Autor/NombreDelTema/`.
